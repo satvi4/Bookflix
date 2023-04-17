@@ -1,5 +1,6 @@
 package com.example.bookflix.author;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.cassandra.core.cql.PrimaryKeyType;
 import org.springframework.data.cassandra.core.mapping.CassandraType;
 import org.springframework.data.cassandra.core.mapping.CassandraType.Name;
@@ -10,6 +11,7 @@ import org.springframework.data.cassandra.core.mapping.Table;
 @Table(value = "author_by_id")
 public class Author {
     
+    @Id
     @PrimaryKeyColumn(name = "author_id", ordinal = 0, type = PrimaryKeyType.PARTITIONED)
     private String id;
     

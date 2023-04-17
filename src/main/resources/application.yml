@@ -1,4 +1,5 @@
-spring.main.allow-circular-references: true
+spring.main.allow-circular-references:
+  true
 
 spring:
   application:
@@ -15,7 +16,7 @@ spring:
       keyspace-name: main
       username: XZSvKsyAKezLUIaFzAPCWhvs
       password: D2R_GY6iSXbcSACPYPQ3NP6Zk.Zm+852y06ueciJuQHRQI8+,nzl9-GM72fP+QJ8+QlM6qrZq4wXj5qbS9+dAd03Hd-4vwZWptahTnIa.H.EQ72qX_SSuW+UjTJYOkUQ
-      schema-action: create-if-not-exists
+      schema-action: recreate
       request:
         timeout: 10s
       connection:
