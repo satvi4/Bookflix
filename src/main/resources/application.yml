@@ -28,7 +28,7 @@ datastax.astra:
 
 astra.db:
     id: 574d9311-ca2a-4db0-9b45-3024546f25ab-1
-    region: us-west1
+    region: us-east1
     keyspace: main
     application.token: AstraCS:XZSvKsyAKezLUIaFzAPCWhvs:5bb6f467b50ee8b5b8d029024ebb98344b6962e6bd5cdf7aa16be9f9f6fd42a0
 

@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.cassandra.CqlSessionBuilderCustomi
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 
-import java.nio.file.Path;
 import com.example.bookflix.connection.DataStaxAstraProperties;
+import java.nio.file.Path;;
 
 @SpringBootApplication
 @EnableConfigurationProperties(DataStaxAstraProperties.class)
@@ -23,6 +23,16 @@ public class BookflixApplication {
         return builder -> builder.withCloudSecureConnectBundle(bundle);
     }
 
-	
+	// @Bean
+	// public CqlSessionBuilderCustomizer sessionBuilderCustomizer(DataStaxAstraProperties astraProperties) {
+    //     Path bundle = astraProperties.getSecureConnectBundle().toPath();
+    //     return builder -> builder.withCloudSecureConnectBundle(bundle).withAuthCredentials("clientId","clientSecret")
+
+	// 			.withKeyspace("main")
+
+	// 			.build();
+    // }
+
+	public void CassandraDataAutoConfiguration(com.datastax.oss.driver.api.core.CqlSession session){}
 
 }
