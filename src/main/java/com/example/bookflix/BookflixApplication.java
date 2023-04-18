@@ -167,7 +167,6 @@ public class BookflixApplication {
 	// }
 
 
-
 	@Bean
 	public CqlSessionBuilderCustomizer sessionBuilderCustomizer(DataStaxAstraProperties astraProperties) {
 		Path bundle = astraProperties.getSecureConnectBundle().toPath();
@@ -194,12 +193,12 @@ public class BookflixApplication {
 	// public Principal user(Principal principal) {
 	// return principal;
 	// }
-
-
+	
 
 	// @RequestMapping("/user")
 	// public String user(@AuthenticationPrincipal OAuth2User principal) {
 	// 	System.out.println(principal);
 	// 	return principal.getAttribute("name");
 	// }
+
 }
