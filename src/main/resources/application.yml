@@ -5,18 +5,18 @@ spring:
   application:
     name: bookflix
   security:
-    oauth2:
+    oauth2: 
       client:
         registration:
           github:
-            client-id: Iv1.674360fae68d7e59
-            client-secret: bf4dd5f08fdff59a43589c26116b1c51a5db5fff
+            client-id: Iv1.1b5dd7e22c0cf8cd
+            client-secret: 8362896850feab096200d22d21980cd5d5472e84
   data:
     cassandra:
       keyspace-name: main
       username: XZSvKsyAKezLUIaFzAPCWhvs
       password: D2R_GY6iSXbcSACPYPQ3NP6Zk.Zm+852y06ueciJuQHRQI8+,nzl9-GM72fP+QJ8+QlM6qrZq4wXj5qbS9+dAd03Hd-4vwZWptahTnIa.H.EQ72qX_SSuW+UjTJYOkUQ
-      schema-action: recreate
+      schema-action: create-if-not-exists
       request:
         timeout: 10s
       connection:

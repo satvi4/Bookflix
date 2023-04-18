@@ -1,12 +1,15 @@
 package com.example.bookflix;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.cassandra.CqlSessionBuilderCustomizer;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.core.user.OAuth2User;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.json.*;
 
 import com.example.bookflix.author.Author;
@@ -18,6 +21,7 @@ import com.example.bookflix.connection.DataStaxAstraProperties;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.security.Principal;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 import java.time.LocalDate;
@@ -156,11 +160,13 @@ public class BookflixApplication {
 		});
 	}
 
-	@PostConstruct
-	public void start() throws IOException {
-		// loadAuthors(0);
-		loadBooks();
-	}
+	// @PostConstruct
+	// public void start() throws IOException {
+	// loadAuthors(0);
+	// loadBooks();
+	// }
+
+
 
 	@Bean
 	public CqlSessionBuilderCustomizer sessionBuilderCustomizer(DataStaxAstraProperties astraProperties) {
@@ -184,4 +190,16 @@ public class BookflixApplication {
 	// CassandraDataAutoConfiguration(com.datastax.oss.driver.api.core.CqlSession
 	// session){}
 
+	// @RequestMapping(value = "/user")
+	// public Principal user(Principal principal) {
+	// return principal;
+	// }
+
+
+
+	// @RequestMapping("/user")
+	// public String user(@AuthenticationPrincipal OAuth2User principal) {
+	// 	System.out.println(principal);
+	// 	return principal.getAttribute("name");
+	// }
 }
