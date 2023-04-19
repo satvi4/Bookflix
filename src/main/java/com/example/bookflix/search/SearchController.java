@@ -43,7 +43,7 @@ public class SearchController {
                 if (StringUtils.hasText(coverId)) {
                     coverId = COVER_IMAGE_ROOT + coverId + "-M.jpg";
                 } else {
-                    coverId = "/images/no-image.png";
+                    coverId = "src/main/resources/static/images/no-image.jpeg";
                 }
                 bookResult.setCover_i(coverId);
                 return bookResult;
@@ -54,5 +54,5 @@ public class SearchController {
 
         return "search";
     }
-    
+
 }
