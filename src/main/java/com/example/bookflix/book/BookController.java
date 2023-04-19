@@ -10,6 +10,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import com.example.bookflix.userbooks.UserBooks;
+import com.example.bookflix.userbooks.UserBooksPrimaryKey;
+import com.example.bookflix.userbooks.UserBooksRepository;
+
 @Controller
 public class BookController {
     private final String COVER_IMAGE_ROOT = "http://covers.openlibrary.org/b/id/";
@@ -17,8 +21,8 @@ public class BookController {
     @Autowired
     BookRepository bookRepository;
 
-    // @Autowired
-    // UserBooksRepository userBooksRepository;
+    @Autowired
+    UserBooksRepository userBooksRepository;
 
     @GetMapping(value = "/books/{bookId}")
     public String getBook(@PathVariable String bookId, Model model, @AuthenticationPrincipal OAuth2User principal) {
@@ -31,19 +35,19 @@ public class BookController {
             }
             model.addAttribute("coverImage", coverImageUrl);
             model.addAttribute("book", book);
-            // if (principal != null && principal.getAttribute("login") != null) {
-            //     String userId = principal.getAttribute("login");
-            //     model.addAttribute("loginId", userId);
-            //     UserBooksPrimaryKey key = new UserBooksPrimaryKey();
-            //     key.setBookId(bookId);
-            //     key.setUserId(userId);
-            //     Optional<UserBooks> userBooks = userBooksRepository.findById(key);
-            //     if (userBooks.isPresent()) {
-            //         model.addAttribute("userBooks", userBooks.get());
-            //     } else {
-            //         model.addAttribute("userBooks", new UserBooks());
-            //     }
-            // }
+            if (principal != null && principal.getAttribute("login") != null) {
+                String userId = principal.getAttribute("login");
+                model.addAttribute("loginId", userId);
+                UserBooksPrimaryKey key = new UserBooksPrimaryKey();
+                key.setBookId(bookId);
+                key.setUserId(userId);
+                Optional<UserBooks> userBooks = userBooksRepository.findById(key);
+                if (userBooks.isPresent()) {
+                    model.addAttribute("userBooks", userBooks.get());
+                } else {
+                    model.addAttribute("userBooks", new UserBooks());
+                }
+            }
             return "book";
 
         }
