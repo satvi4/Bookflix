@@ -10,10 +10,10 @@ import org.springframework.data.cassandra.core.mapping.Table;
 
 @Table(value = "book_by_user_and_bookid")
 public class UserBooks {
-    
+
     @PrimaryKey
     private UserBooksPrimaryKey key;
-    
+
     @Column("started_date")
     @CassandraType(type = Name.DATE)
     private LocalDate startedDate;
@@ -69,7 +69,5 @@ public class UserBooks {
     public void setRating(int rating) {
         this.rating = rating;
     }
-
-    
 
 }

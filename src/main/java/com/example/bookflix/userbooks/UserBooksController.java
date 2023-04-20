@@ -17,24 +17,22 @@ import com.example.bookflix.book.BookRepository;
 import com.example.bookflix.user.BooksByUser;
 import com.example.bookflix.user.BooksByUserRepository;
 
-
 @Controller
 public class UserBooksController {
 
-    @Autowired 
+    @Autowired
     UserBooksRepository userBooksRepository;
 
-    @Autowired 
+    @Autowired
     BooksByUserRepository booksByUserRepository;
 
-    @Autowired 
+    @Autowired
     BookRepository bookRepository;
-    
+
     @PostMapping("/addUserBook")
     public ModelAndView addBookForUser(
-        @RequestBody MultiValueMap<String, String> formData, 
-        @AuthenticationPrincipal OAuth2User principal
-    ) {
+            @RequestBody MultiValueMap<String, String> formData,
+            @AuthenticationPrincipal OAuth2User principal) {
         if (principal == null || principal.getAttribute("login") == null) {
             return null;
         }
@@ -46,7 +44,7 @@ public class UserBooksController {
         }
         Book book = optionalBook.get();
 
-        UserBooks userBooks  = new UserBooks();
+        UserBooks userBooks = new UserBooks();
         UserBooksPrimaryKey key = new UserBooksPrimaryKey();
         String userId = principal.getAttribute("login");
         key.setUserId(userId);
@@ -73,8 +71,7 @@ public class UserBooksController {
         booksByUser.setRating(rating);
         booksByUserRepository.save(booksByUser);
 
+        return new ModelAndView("redirect:/");
 
-        return new ModelAndView("redirect:/books/" + bookId);
-        
     }
 }
