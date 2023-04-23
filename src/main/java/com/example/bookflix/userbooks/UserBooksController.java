@@ -3,6 +3,8 @@ package com.example.bookflix.userbooks;
 import java.time.LocalDate;
 import java.util.Optional;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.core.user.OAuth2User;
@@ -29,17 +31,21 @@ public class UserBooksController {
     @Autowired
     BookRepository bookRepository;
 
+    private static final Logger logger = LogManager.getLogger(UserBooksController.class);
+
     @PostMapping("/addUserBook")
     public ModelAndView addBookForUser(
             @RequestBody MultiValueMap<String, String> formData,
             @AuthenticationPrincipal OAuth2User principal) {
         if (principal == null || principal.getAttribute("login") == null) {
+            logger.info("User not logged in...");
             return null;
         }
 
         String bookId = formData.getFirst("bookId");
         Optional<Book> optionalBook = bookRepository.findById(bookId);
         if (!optionalBook.isPresent()) {
+            logger.info("Book Data not available for book id ="+bookId);
             return new ModelAndView("redirect:/");
         }
         Book book = optionalBook.get();
@@ -70,7 +76,7 @@ public class UserBooksController {
         booksByUser.setReadingStatus(formData.getFirst("readingStatus"));
         booksByUser.setRating(rating);
         booksByUserRepository.save(booksByUser);
-
+        logger.info("Book status updated by the user");
         return new ModelAndView("redirect:/");
 
     }

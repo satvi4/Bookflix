@@ -4,6 +4,8 @@ spring.main.allow-circular-references:
 spring:
   application:
     name: bookflix
+  profiles:
+    active: 
   security:
     oauth2: 
       client:
@@ -34,3 +36,13 @@ astra.db:
 
 server:
   port : 9090
+
+logging:
+  file:
+    name: logs/book.log
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  level:
+    -root: ERROR
+    -com.example.bookflix: INFO

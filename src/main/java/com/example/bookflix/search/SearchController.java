@@ -3,6 +3,8 @@ package com.example.bookflix.search;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
@@ -20,6 +22,8 @@ public class SearchController {
 
     private final WebClient webClient;
 
+    private static final Logger logger = LogManager.getLogger(SearchController.class);
+
     public SearchController(WebClient.Builder webClientBuilder) {
         this.webClient = webClientBuilder.exchangeStrategies(ExchangeStrategies.builder()
         .codecs(configurer -> configurer
@@ -30,6 +34,7 @@ public class SearchController {
 
     @GetMapping(value = "/search")
     public String getSearchResults(@RequestParam String query, Model model) {
+        logger.info("Getting search results for..." + query);
         Mono<SearchResult> resultsMono = this.webClient.get()
             .uri("?q={query}", query)
             .retrieve().bodyToMono(SearchResult.class);

@@ -1,0 +1,23 @@
+2023-04-24 00:47:12 [restartedMain] INFO  c.e.bookflix.BookflixApplication - Starting BookflixApplication using Java 17.0.6 on Satvika with PID 52164 (/home/satvika/Documents/bookflix/target/classes started by satvika in /home/satvika/Documents/bookflix)
+2023-04-24 00:47:12 [restartedMain] INFO  c.e.bookflix.BookflixApplication - No active profile set, falling back to 1 default profile: "default"
+2023-04-24 00:47:34 [restartedMain] INFO  c.e.bookflix.BookflixApplication - Started BookflixApplication in 22.268 seconds (JVM running for 22.708)
+2023-04-24 00:48:13 [http-nio-9090-exec-3] INFO  c.e.bookflix.home.HomeController - No user logged in
+2023-04-24 00:48:19 [http-nio-9090-exec-7] INFO  c.e.bookflix.home.HomeController - User logged in with user id- null
+2023-04-24 00:48:20 [http-nio-9090-exec-7] INFO  c.e.bookflix.home.HomeController - Book fetched...
+2023-04-24 00:48:53 [http-nio-9090-exec-8] INFO  c.e.bookflix.search.SearchController - Getting search results for...lord of the rings
+2023-04-24 00:49:04 [http-nio-9090-exec-2] INFO  c.e.bookflix.search.SearchController - Getting search results for...lord of the rings
+2023-04-24 00:49:11 [http-nio-9090-exec-4] INFO  c.e.bookflix.home.HomeController - User logged in with user id- null
+2023-04-24 00:49:11 [http-nio-9090-exec-4] INFO  c.e.bookflix.home.HomeController - Book fetched...
+2023-04-24 00:49:18 [http-nio-9090-exec-5] INFO  c.e.bookflix.search.SearchController - Getting search results for...hunger games
+2023-04-24 00:49:26 [http-nio-9090-exec-8] INFO  c.e.bookflix.search.SearchController - Getting search results for...hunger games
+2023-04-24 00:49:36 [http-nio-9090-exec-10] INFO  c.e.bookflix.home.HomeController - User logged in with user id- null
+2023-04-24 00:49:36 [http-nio-9090-exec-10] INFO  c.e.bookflix.home.HomeController - Book fetched...
+2023-04-24 00:49:54 [http-nio-9090-exec-2] INFO  c.e.b.userbooks.UserBooksController - Book status updated by the user
+2023-04-24 00:49:54 [http-nio-9090-exec-3] INFO  c.e.bookflix.home.HomeController - User logged in with user id- null
+2023-04-24 00:49:55 [http-nio-9090-exec-3] INFO  c.e.bookflix.home.HomeController - Book fetched...
+2023-04-24 00:53:56 [restartedMain] INFO  c.e.bookflix.BookflixApplication - Starting BookflixApplication using Java 17.0.6 on Satvika with PID 52164 (/home/satvika/Documents/bookflix/target/classes started by satvika in /home/satvika/Documents/bookflix)
+2023-04-24 00:53:56 [restartedMain] INFO  c.e.bookflix.BookflixApplication - No active profile set, falling back to 1 default profile: "default"
+2023-04-24 00:54:13 [restartedMain] INFO  c.e.bookflix.BookflixApplication - Started BookflixApplication in 17.607 seconds (JVM running for 422.364)
+2023-04-24 00:54:27 [http-nio-9090-exec-1] INFO  c.e.bookflix.search.SearchController - Getting search results for...1984
+2023-04-24 00:54:55 [http-nio-9090-exec-4] INFO  c.e.bookflix.home.HomeController - User logged in with user id- satvi4
+2023-04-24 00:54:56 [http-nio-9090-exec-4] INFO  c.e.bookflix.home.HomeController - Book fetched...

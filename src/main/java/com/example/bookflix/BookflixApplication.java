@@ -32,6 +32,9 @@ import java.nio.file.Files;
 
 import javax.annotation.PostConstruct;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 @SpringBootApplication
 @EnableConfigurationProperties(DataStaxAstraProperties.class)
 public class BookflixApplication {
@@ -52,11 +55,15 @@ public class BookflixApplication {
 
 	private String authorFile = "src/main/resources/test-authors.txt";
 
+	private static final Logger logger = LogManager.getLogger(BookflixApplication.class);
+
 	public static void main(String[] args) {
 
 		SpringApplication.run(BookflixApplication.class, args);
 
+
 	}
+
 
 	// public void loadAuthors(int startline) throws IOException {
 	// Path path = Paths.get(authorDumpLocation);
@@ -166,7 +173,6 @@ public class BookflixApplication {
 	// loadBooks();
 	// }
 
-
 	@Bean
 	public CqlSessionBuilderCustomizer sessionBuilderCustomizer(DataStaxAstraProperties astraProperties) {
 		Path bundle = astraProperties.getSecureConnectBundle().toPath();
@@ -193,12 +199,11 @@ public class BookflixApplication {
 	// public Principal user(Principal principal) {
 	// return principal;
 	// }
-	
 
 	// @RequestMapping("/user")
 	// public String user(@AuthenticationPrincipal OAuth2User principal) {
-	// 	System.out.println(principal);
-	// 	return principal.getAttribute("name");
+	// System.out.println(principal);
+	// return principal.getAttribute("name");
 	// }
 
 }
