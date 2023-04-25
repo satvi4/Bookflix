@@ -1,0 +1,9 @@
+- name: Pull and run docker image
+  hosts: localhost
+  tasks:
+
+    - name: pull docker image
+      shell: docker pull satvi4/bookflix
+
+    - name: run container
+      shell: docker run -i -t --name books -d satvi4/bookflix
