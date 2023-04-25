@@ -38,6 +38,8 @@ public class HomeController {
     public String home(@AuthenticationPrincipal OAuth2User principal, Model model) {
         if (principal == null || principal.getAttribute("login") == null) {
             logger.info("No user logged in");
+            System.out.println(principal);
+            System.out.println(model);
             return "index";
         }
 
