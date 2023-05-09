@@ -4,3 +4,8 @@
 2023-05-09 19:13:31 [restartedMain] INFO  c.e.bookflix.BookflixApplication - Starting BookflixApplication using Java 11.0.18 on Satvika with PID 110776 (/home/satvika/Documents/bookflix/target/classes started by satvika in /home/satvika/Documents/bookflix)
 2023-05-09 19:13:31 [restartedMain] INFO  c.e.bookflix.BookflixApplication - No active profile set, falling back to 1 default profile: "default"
 2023-05-09 19:13:49 [restartedMain] INFO  c.e.bookflix.BookflixApplication - Started BookflixApplication in 19.377 seconds (JVM running for 19.84)
+2023-05-09 19:17:52 [http-nio-9090-exec-1] INFO  c.e.bookflix.home.HomeController - No user logged in
+2023-05-09 19:17:56 [http-nio-9090-exec-5] INFO  c.e.bookflix.home.HomeController - User logged in with user id- satvi4
+2023-05-09 19:17:57 [http-nio-9090-exec-5] INFO  c.e.bookflix.home.HomeController - Book fetched...
+2023-05-09 20:50:59 [restartedMain] INFO  c.e.bookflix.BookflixApplication - Starting BookflixApplication using Java 11.0.18 on Satvika with PID 168101 (/home/satvika/Documents/bookflix/target/classes started by satvika in /home/satvika/Documents/bookflix)
+2023-05-09 20:50:59 [restartedMain] INFO  c.e.bookflix.BookflixApplication - No active profile set, falling back to 1 default profile: "default"
