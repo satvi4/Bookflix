@@ -9,3 +9,20 @@
 2023-05-09 19:17:57 [http-nio-9090-exec-5] INFO  c.e.bookflix.home.HomeController - Book fetched...
 2023-05-09 20:50:59 [restartedMain] INFO  c.e.bookflix.BookflixApplication - Starting BookflixApplication using Java 11.0.18 on Satvika with PID 168101 (/home/satvika/Documents/bookflix/target/classes started by satvika in /home/satvika/Documents/bookflix)
 2023-05-09 20:50:59 [restartedMain] INFO  c.e.bookflix.BookflixApplication - No active profile set, falling back to 1 default profile: "default"
+2023-05-09 20:51:20 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 9090 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 9090 or configure this application to listen on another port.
+
+2023-05-09 20:51:38 [restartedMain] INFO  c.e.bookflix.BookflixApplication - Starting BookflixApplication using Java 11.0.18 on Satvika with PID 168646 (/home/satvika/Documents/bookflix/target/classes started by satvika in /home/satvika/Documents/bookflix)
+2023-05-09 20:51:38 [restartedMain] INFO  c.e.bookflix.BookflixApplication - No active profile set, falling back to 1 default profile: "default"
+2023-05-09 20:51:56 [restartedMain] INFO  c.e.bookflix.BookflixApplication - Started BookflixApplication in 18.328 seconds (JVM running for 18.866)
