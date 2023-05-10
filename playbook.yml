@@ -10,7 +10,7 @@
       command: docker-compose pull
 
     - name: Create containers for the pulled Docker images
-      command: docker-compose up -d --no-recreate
+      command: docker-compose up -d --build
 
     - name: Prune the dangling Docker images
       command: docker image prune --force
