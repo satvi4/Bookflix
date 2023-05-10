@@ -1,6 +1,6 @@
 services:
   bookflix-frontend:
-    image: satvi4/bookflix-frontend:latest
+    image: satvi4/bookflix-front:latest
     container_name: bookflix-frontend
     # Keep stdin_open because we don't want this container to exit immediately which it
     # otherwise would have because there's no foreground processes
@@ -13,8 +13,8 @@ services:
       - ./frontend/templates:/Frontend
 
   bookflix-backend:
-    image: satvi4/bookflix:latest
-    container_name: bookflix
+    image: satvi4/bookflix-back:latest
+    container_name: bookflix-backend
     ports:
       - "9090:9090"
     networks:
