@@ -25,8 +25,6 @@ services:
     volumes:
       - ./Frontend:/backend
       - ./backend/logs:/logs
-    depends_on:
-      - bookflix-frontend
   
 networks:
   my-net:
