@@ -30,3 +30,9 @@ services:
   
 networks:
   my-net:
+
+volumes:
+  logs:
+    driver: local 
+  Frontend:
+    driver: local
