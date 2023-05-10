@@ -7,10 +7,10 @@
         dest: ./
 
     - name: Pull the Docker images specifed in docker-compose
-      command: docker-compose -f pull
+      command: docker-compose pull
 
     - name: Create containers for the pulled Docker images
-      command: docker-compose -f up -d
+      command: docker-compose up -d
 
     - name: Prune the dangling Docker images
       command: docker image prune --force
