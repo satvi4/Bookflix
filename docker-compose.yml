@@ -16,7 +16,7 @@ services:
     image: satvi4/bookflix:latest
     container_name: bookflix
     ports:
-      - "3001:3001"
+      - "9090:9090"
     networks:
       my-net:
     # Using Docker volume for persisting logs
