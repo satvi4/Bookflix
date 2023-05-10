@@ -17,7 +17,7 @@ spring:
     enabled: false          
   thymeleaf:
     cache: false             
-    prefix: file:../templates/
+    prefix: file:./templates/
   mvc:
     dispatch-options-request: true
   messages:
