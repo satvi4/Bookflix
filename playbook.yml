@@ -1,9 +1,16 @@
-- name: Pull and run docker image
-  hosts: localhost
+- name: Deploy docker images
+  hosts: all
   tasks:
+    - name: Copy Docker Compose file from host machine to remote host
+      copy:
+        src: ./docker-compose.yml
+        dest: ./
 
-    - name: pull docker image
-      shell: docker pull satvi4/bookflix
+    - name: Pull the Docker images specifed in docker-compose
+      command: docker-compose pull
 
-    - name: run container
-      shell: docker run -i -t --name books -d satvi4/bookflix
+    - name: Create containers for the pulled Docker images
+      command: docker-compose up -d
+
+    - name: Prune the dangling Docker images
+      command: docker image prune --force
