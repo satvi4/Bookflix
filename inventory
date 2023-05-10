@@ -1,2 +1,2 @@
 [ubuntu]
-172.16.144.216 ansible_usr=ansible_usr
+192.168.49.1 ansible_usr=ansible_usr
