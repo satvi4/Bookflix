@@ -7,7 +7,7 @@
         dest: ./
 
     - name: Pull the Docker images specifed in docker-compose
-      command: docker-compose pull
+      command: docker-compose -f docker-compose.yml pull
 
     - name: Create containers for the pulled Docker images
       command: docker-compose -f docker-compose.yml up -d
