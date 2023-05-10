@@ -6,8 +6,11 @@
         src: ./docker-compose.yml
         dest: ./
 
+    - name: Pull the Docker images specifed in docker-compose
+      command: docker-compose -f pull
+
     - name: Create containers for the pulled Docker images
-      command: docker-compose create
+      command: docker-compose -f up -d
 
     - name: Prune the dangling Docker images
       command: docker image prune --force
