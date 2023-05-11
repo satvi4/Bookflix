@@ -10,6 +10,8 @@ services:
     networks:
       my-net:
     restart: always
+    volumes:
+      - /frontend:/templates
 
   bookflix-backend:
     image: satvi4/bookflix-backend:latest
@@ -25,12 +27,11 @@ services:
     # and we're linking it to logs folder on the container machine
     volumes:
       - /logs:/logs
+      - /frontend:/templates
   
 networks:
   my-net:
 
 volumes:
   logs:
-   name: logs
-  Frontend:
-   name: Frontend
+  frontend:
