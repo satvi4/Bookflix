@@ -11,7 +11,7 @@ services:
       my-net:
     restart: always
     volumes:
-      - ./frontend/templates:/usr/src/Frontend/templates
+      - Frontend/templates:./frontend/templates
 
   bookflix-backend:
     image: satvi4/bookflix-backend:latest
@@ -26,12 +26,14 @@ services:
     # ./backend/logs refers to the path /home/backend/logs on the host machine
     # and we're linking it to logs folder on the container machine
     volumes:
-      - /usr/src/Frontend/templates:/backend/templates
-      - ./backend/logs:/usr/src/logs
+      - Frontend/templates:./backend/templates
+      - logs:./backend/logs
   
 networks:
   my-net:
 
 volumes:
   logs:
+   name: logs
   Frontend:
+   name: Frontend
