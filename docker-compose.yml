@@ -11,7 +11,7 @@ services:
       my-net:
     restart: always
     volumes:
-      - /frontend:/templates
+      - /frontend:/usr/share/nginx/html/templates
 
   bookflix-backend:
     image: satvi4/bookflix-backend:latest
