@@ -13,16 +13,9 @@ spring:
           github:
             client-id: Iv1.1b5dd7e22c0cf8cd
             client-secret: 8362896850feab096200d22d21980cd5d5472e84
-  freemarker:
-    enabled: false          
-  thymeleaf:
-    cache: false             
-    prefix: file:./templates/
-  mvc:
-    dispatch-options-request: true
-  messages:
-    basename: static/locale/messages
-    encoding: UTF-8
+          google:
+            client-id: 465566953017-hop8k32gafr7n0pv2ffvsj7m96a2mtf3.apps.googleusercontent.com
+            client-secret: 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
 
   data:
     cassandra:
@@ -53,7 +46,7 @@ logging:
     name: logs/book.log
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
-    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+    file: "%d{dd-MM-yyyy HH:mm:ss.SSS} [%thread] %-5level %logger{36}.%M %msg%n"
   level:
     -root: ERROR
     -com.example.bookflix: INFO

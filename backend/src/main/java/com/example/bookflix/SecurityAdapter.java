@@ -6,6 +6,9 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+
+import static org.springframework.security.config.Customizer.withDefaults;
 
 @Configuration
 public class SecurityAdapter extends WebSecurityConfigurerAdapter {
@@ -16,21 +19,24 @@ public class SecurityAdapter extends WebSecurityConfigurerAdapter {
 	 */
     @Override
 	protected void configure(HttpSecurity http) throws Exception {
-		// @formatter:off
-		http
-			.authorizeRequests(a -> a
-				.anyRequest().permitAll()
-			)
-			.exceptionHandling(e -> e
-				.authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED))
-			)
-			.csrf(c -> c
-				.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
-			)
-			.logout(l -> l
-				.logoutSuccessUrl("/").permitAll()
-			)
-			.oauth2Login();
+        // @formatter:off
+        http
+                .authorizeRequests(a -> a
+                                .anyRequest().permitAll()
+                )
+                .exceptionHandling(e -> e
+                                .authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED))
+                )
+                .csrf(c -> c
+                                .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
+                )
+                .logout(l -> l
+                                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+                                .invalidateHttpSession(true)
+                                .deleteCookies("JSESSIONID")
+                                .logoutSuccessUrl("/").permitAll()
+                )
+                .oauth2Login(withDefaults());
 		// @formatter:on
     }
     
