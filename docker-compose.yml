@@ -10,8 +10,6 @@ services:
     networks:
       my-net:
     restart: always
-    volumes:
-      - Frontend/templates:./frontend/templates
 
   bookflix-backend:
     image: satvi4/bookflix-backend:latest
@@ -26,8 +24,7 @@ services:
     # ./backend/logs refers to the path /home/backend/logs on the host machine
     # and we're linking it to logs folder on the container machine
     volumes:
-      - Frontend/templates:./backend/templates
-      - logs:./backend/logs
+      - /logs:/backend/logs
   
 networks:
   my-net:
