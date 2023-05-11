@@ -1,2 +1,2 @@
 [ubuntu]
-192.168.29.154 ansible_ssh_usr=anoushka ansible_ssh_pass=qwerty
+192.168.49.1 ansible_usr=satvika
