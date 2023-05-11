@@ -26,7 +26,7 @@ services:
     # ./backend/logs refers to the path /home/backend/logs on the host machine
     # and we're linking it to logs folder on the container machine
     volumes:
-      - /logs:/booklogs
+      - /logs:/booklogs:rw
       - /frontend:/templates
   
 networks:
