@@ -2,8 +2,6 @@ services:
   bookflix-frontend:
     image: satvi4/bookflix-frontend:latest
     container_name: bookflix-frontend
-    # Keep stdin_open because we don't want this container to exit immediately which it
-    # otherwise would have because there's no foreground processes
     stdin_open: true
     ports:
       - "3000:3000"
@@ -23,8 +21,6 @@ services:
     networks:
       my-net:
     # Using Docker volume for persisting logs
-    # ./backend/logs refers to the path /home/backend/logs on the host machine
-    # and we're linking it to logs folder on the container machine
     volumes:
       - /logs:/booklogs:rw
       - /frontend:/templates
@@ -33,5 +29,5 @@ networks:
   my-net:
 
 volumes:
-  booklogs:
+  logs:
   frontend:
