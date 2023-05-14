@@ -12,7 +12,7 @@ import java.nio.file.Path;
 @SpringBootTest
 class CassandraConnectionTest {
 
-    @Value("${cassandra.secure-connect-bundle}")
+    @Value("${datastax.astra.secure-connect-bundle}")
     private Path secureConnectBundlePath;
 
     @Test

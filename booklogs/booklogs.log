@@ -1,0 +1,3 @@
+14-05-2023 19:26:05.310 INFO  c.e.bookflix.BookflixApplication.logStarting Starting BookflixApplication using Java 11.0.18 on Satvika with PID 19383 (/home/satvika/Documents/Bookflix/backend/target/classes started by satvika in /home/satvika/Documents/Bookflix)
+14-05-2023 19:26:05.312 INFO  c.e.bookflix.BookflixApplication.logStartupProfileInfo No active profile set, falling back to 1 default profile: "default"
+14-05-2023 19:26:29.869 INFO  c.e.bookflix.BookflixApplication.logStarted Started BookflixApplication in 25.12 seconds (JVM running for 25.716)
