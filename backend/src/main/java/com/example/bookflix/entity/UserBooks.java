@@ -1,4 +1,4 @@
-package com.example.bookflix.userbooks;
+package com.example.bookflix.entity;
 
 import java.time.LocalDate;
 

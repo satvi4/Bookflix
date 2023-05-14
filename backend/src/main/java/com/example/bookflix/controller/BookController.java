@@ -1,4 +1,4 @@
-package com.example.bookflix.book;
+package com.example.bookflix.controller;
 
 import java.util.Optional;
 
@@ -10,9 +10,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import com.example.bookflix.userbooks.UserBooks;
-import com.example.bookflix.userbooks.UserBooksPrimaryKey;
-import com.example.bookflix.userbooks.UserBooksRepository;
+import com.example.bookflix.entity.Book;
+import com.example.bookflix.entity.UserBooks;
+import com.example.bookflix.entity.UserBooksPrimaryKey;
+import com.example.bookflix.repository.BookRepository;
+import com.example.bookflix.repository.UserBooksRepository;
 
 @Controller
 public class BookController {

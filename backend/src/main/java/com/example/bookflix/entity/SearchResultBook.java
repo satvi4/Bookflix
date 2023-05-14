@@ -1,4 +1,4 @@
-package com.example.bookflix.search;
+package com.example.bookflix.entity;
 
 import java.util.List;
 

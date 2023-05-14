@@ -12,11 +12,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.json.*;
 
-import com.example.bookflix.author.Author;
-import com.example.bookflix.author.AuthorRepository;
-import com.example.bookflix.book.Book;
-import com.example.bookflix.book.BookRepository;
+
 import com.example.bookflix.connection.DataStaxAstraProperties;
+import com.example.bookflix.entity.Author;
+import com.example.bookflix.entity.Book;
+import com.example.bookflix.repository.AuthorRepository;
+import com.example.bookflix.repository.BookRepository;
 
 import java.io.IOException;
 import java.nio.file.Path;

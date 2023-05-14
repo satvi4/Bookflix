@@ -1,8 +1,6 @@
-package com.example.bookflix.home;
+package com.example.bookflix.controller;
 
 import java.util.List;
-// import java.util.logging.LogManager;
-// import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,15 +12,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.example.bookflix.BookflixApplication;
-import com.example.bookflix.user.BooksByUser;
-import com.example.bookflix.user.BooksByUserRepository;
-import com.example.bookflix.userbooks.UserBooksRepository;
+import com.example.bookflix.entity.BooksByUser;
+import com.example.bookflix.repository.BooksByUserRepository;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-// import ch.qos.logback.classic.Logger;
 
 @Controller
 public class HomeController {

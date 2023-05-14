@@ -1,4 +1,4 @@
-package com.example.bookflix.user;
+package com.example.bookflix.entity;
 
 import java.util.List;
 import java.util.UUID;

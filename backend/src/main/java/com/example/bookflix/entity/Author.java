@@ -1,4 +1,4 @@
-package com.example.bookflix.author;
+package com.example.bookflix.entity;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.cassandra.core.cql.PrimaryKeyType;

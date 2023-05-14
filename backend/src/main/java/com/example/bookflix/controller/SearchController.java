@@ -1,4 +1,4 @@
-package com.example.bookflix.search;
+package com.example.bookflix.controller;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.reactive.function.client.ExchangeStrategies;
 import org.springframework.web.reactive.function.client.WebClient;
+
+import com.example.bookflix.entity.SearchResult;
+import com.example.bookflix.entity.SearchResultBook;
 
 import reactor.core.publisher.Mono;
 

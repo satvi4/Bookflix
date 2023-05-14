@@ -1,4 +1,4 @@
-package com.example.bookflix.userbooks;
+package com.example.bookflix.controller;
 
 import java.time.LocalDate;
 import java.util.Optional;
@@ -14,10 +14,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.example.bookflix.book.Book;
-import com.example.bookflix.book.BookRepository;
-import com.example.bookflix.user.BooksByUser;
-import com.example.bookflix.user.BooksByUserRepository;
+import com.example.bookflix.entity.Book;
+import com.example.bookflix.entity.BooksByUser;
+import com.example.bookflix.entity.UserBooks;
+import com.example.bookflix.entity.UserBooksPrimaryKey;
+import com.example.bookflix.repository.BookRepository;
+import com.example.bookflix.repository.BooksByUserRepository;
+import com.example.bookflix.repository.UserBooksRepository;
 
 @Controller
 public class UserBooksController {
